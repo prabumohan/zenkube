@@ -1,14 +1,15 @@
 ---
 /**
- * Draw-on Z + K mark for ZenKube. Default: one-shot draw, then holds.
- * Set loop=true only for internal logo previews (optional).
+ * Draw-on Z + K mark for ZenKube. Loops by default; set loop=false for a single play.
+ * Respects prefers-reduced-motion (static fully-drawn mark).
  */
 interface Props {
   size?: number;
+  /** @default true */
   loop?: boolean;
 }
 
-const { size = 40, loop = false } = Astro.props;
+const { size = 40, loop = true } = Astro.props;
 const uid = `drawzk-${size}-${globalThis.crypto?.randomUUID?.().slice(0, 12) ?? 'x'}`;
 ---
 
@@ -92,11 +93,11 @@ const uid = `drawzk-${size}-${globalThis.crypto?.randomUUID?.().slice(0, 12) ?? 
   }
 
   .zk-drawzk--loop .zk-drawzk__z {
-    animation: zk-drawzk-letter-loop 2.8s ease-in-out infinite;
+    animation: zk-drawzk-letter-loop 2.4s ease-in-out infinite;
   }
   .zk-drawzk--loop .zk-drawzk__k {
-    animation: zk-drawzk-letter-loop 2.8s ease-in-out infinite;
-    animation-delay: 0.45s;
+    animation: zk-drawzk-letter-loop 2.4s ease-in-out infinite;
+    animation-delay: 0.38s;
   }
 
   @media (prefers-reduced-motion: reduce) {

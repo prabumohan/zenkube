@@ -9,14 +9,18 @@ const mail = 'contact@zenkube.dev';
   <div class="container-zen">
     <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
       <div class="max-w-md">
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3.5">
           <div
             class="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg ring-1 ring-white/10"
             aria-hidden="true"
           >
             <LogoDrawZK size={36} />
           </div>
-          <span class="font-display text-lg font-semibold text-white">ZenKube</span>
+          <span
+            class="font-display text-xl font-bold leading-none tracking-[-0.03em] drop-shadow-[0_2px_16px_rgba(0,0,0,0.35)] sm:text-2xl"
+          >
+            <span class="text-white">Zen</span><span class="gradient-text">Kube</span>
+          </span>
         </div>
         <p class="mt-4 text-sm leading-relaxed text-zinc-500">
           Architecture, delivery, and platform work for teams that want fewer surprises in production.

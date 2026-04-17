@@ -1,5 +1,8 @@
 ---
+import LogoDrawZK from './logos/LogoDrawZK.astro';
+
 const year = new Date().getFullYear();
+const mail = 'contact@zenkube.dev';
 ---
 
 <footer class="border-t border-white/[0.06] bg-zen-950/90 py-14">
@@ -8,24 +11,27 @@ const year = new Date().getFullYear();
       <div class="max-w-md">
         <div class="flex items-center gap-3">
           <div
-            class="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-400 to-teal-600 text-xs font-bold text-zen-950"
+            class="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg ring-1 ring-white/10"
+            aria-hidden="true"
           >
-            ZK
+            <LogoDrawZK size={36} />
           </div>
           <span class="font-display text-lg font-semibold text-white">ZenKube</span>
         </div>
         <p class="mt-4 text-sm leading-relaxed text-zinc-500">
-          Premium IT consulting, cloud engineering, and modern web delivery—built for teams that value clarity, security,
-          and steady progress.
+          Architecture, delivery, and platform work for teams that want fewer surprises in production.
+        </p>
+        <p class="mt-4">
+          <a href={`mailto:${mail}`} class="text-sm font-medium text-emerald-400/90 hover:text-emerald-300">{mail}</a>
         </p>
       </div>
       <div class="grid grid-cols-2 gap-10 sm:gap-16">
         <div>
-          <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-500">Quick links</h3>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-500">On this page</h3>
           <ul class="mt-4 space-y-2 text-sm">
             <li><a href="#home" class="nav-link">Home</a></li>
             <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#technologies" class="nav-link">Technologies</a></li>
+            <li><a href="#technologies" class="nav-link">Stack</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
@@ -33,16 +39,17 @@ const year = new Date().getFullYear();
         <div>
           <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-500">Legal</h3>
           <ul class="mt-4 space-y-2 text-sm">
-            <li><a href="#" class="nav-link">Privacy policy</a></li>
-            <li><a href="#" class="nav-link">Terms of service</a></li>
-            <li><a href="#" class="nav-link">Cookie policy</a></li>
+            <li><a href="#" class="nav-link">Privacy</a></li>
+            <li><a href="#" class="nav-link">Terms</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="mt-12 flex flex-col gap-4 border-t border-white/[0.06] pt-8 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
       <p>© {year} ZenKube. All rights reserved.</p>
-      <p class="text-zinc-600">ZenKube is an independent consultancy; product names cited are trademarks of their respective owners.</p>
+      <p class="max-w-xl text-right text-zinc-600 sm:max-w-md">
+        Tradenames belong to their owners. ZenKube is an independent consultancy.
+      </p>
     </div>
   </div>
 </footer>

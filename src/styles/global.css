@@ -30,8 +30,16 @@
     @apply border-emerald-400/25 shadow-glow-sm;
   }
 
+  .surface-muted {
+    @apply rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-md;
+  }
+
   .gradient-text {
     @apply bg-gradient-to-r from-emerald-300 via-teal-200 to-violet-300 bg-clip-text text-transparent;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-500;
   }
 
   .btn-primary {

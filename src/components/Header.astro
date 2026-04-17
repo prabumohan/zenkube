@@ -1,14 +1,16 @@
 ---
+import LogoDrawZK from './logos/LogoDrawZK.astro';
 ---
 
 <header class="surface sticky top-4 z-50 mx-4 mt-4 sm:mx-6">
   <div class="container-zen">
     <div class="flex items-center justify-between py-4">
-      <a href="#home" class="group flex items-center gap-3">
+      <a href="#home" class="group flex items-center gap-3" aria-label="ZenKube home">
         <div
-          class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-sm font-bold text-zen-950 shadow-glow-sm transition group-hover:scale-[1.02]"
+          class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-glow-sm ring-1 ring-white/10 transition group-hover:scale-[1.02] group-hover:ring-emerald-400/30"
+          aria-hidden="true"
         >
-          ZK
+          <LogoDrawZK size={40} />
         </div>
         <span class="font-display text-lg font-semibold tracking-tight text-white">ZenKube</span>
       </a>
@@ -16,7 +18,7 @@
       <nav class="desktop-nav hidden items-center gap-8 md:flex">
         <a href="#home" class="nav-link">Home</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#technologies" class="nav-link">Technologies</a>
+        <a href="#technologies" class="nav-link">Stack</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
@@ -43,7 +45,7 @@
       <div class="space-y-1 border-t border-white/10 px-2 py-4">
         <a href="#home" class="block rounded-lg px-3 py-2.5 nav-link">Home</a>
         <a href="#services" class="block rounded-lg px-3 py-2.5 nav-link">Services</a>
-        <a href="#technologies" class="block rounded-lg px-3 py-2.5 nav-link">Technologies</a>
+        <a href="#technologies" class="block rounded-lg px-3 py-2.5 nav-link">Stack</a>
         <a href="#about" class="block rounded-lg px-3 py-2.5 nav-link">About</a>
         <a href="#contact" class="block rounded-lg px-3 py-2.5 nav-link">Contact</a>
         <div class="pt-3">

@@ -1,117 +1,121 @@
 ---
 const filters = [
-  { id: 'all', label: 'All technologies' },
-  { id: 'web', label: 'Web development' },
+  { id: 'all', label: 'All' },
+  { id: 'web', label: 'Web' },
   { id: 'mobile', label: 'Mobile' },
   { id: 'cloud', label: 'Cloud' },
-  { id: 'data', label: 'Database' },
-  { id: 'ai', label: 'AI & ML' },
-  { id: 'devsecops', label: 'DevSecOps' },
+  { id: 'data', label: 'Data' },
+  { id: 'ai', label: 'AI' },
+  { id: 'devsecops', label: 'SRE / Sec' },
   { id: 'microsoft', label: 'Microsoft' },
 ];
 ---
 
 <section id="technologies" class="section-y">
-  <div class="container-zen">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Technologies we use</h2>
-      <p class="mt-4 text-lg text-zinc-400">
-        We bring a modern toolkit to every engagement—so your solutions stay maintainable, observable, and ready to evolve.
+  <div class="container-zen flex flex-col gap-12 lg:flex-row lg:gap-16">
+    <div class="max-w-sm shrink-0 lg:pt-2">
+      <p class="eyebrow text-violet-200/50">Toolkit</p>
+      <h2 class="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Stack signals</h2>
+      <p class="mt-4 text-sm leading-relaxed text-zinc-500">
+        Filters are a shorthand—not an exhaustive list. If your stack is adjacent, we have probably touched something
+        close to it in production.
       </p>
     </div>
 
-    <div class="mt-10 flex flex-wrap justify-center gap-2">
-      {
-        filters.map((f, i) => (
-          <button
-            type="button"
-            onclick={`showTechCategory('${f.id}', this)`}
-            class:list={['tech-filter cursor-pointer text-xs font-semibold uppercase tracking-wide', i === 0 ? 'pill-active' : 'pill']}
-          >
-            {f.label}
-          </button>
-        ))
-      }
-    </div>
-
-    <div class="mt-14 grid gap-5 md:grid-cols-2">
-      <div class="tech-category web surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Web development</h3>
-        <p class="mt-2 text-sm text-zinc-400">Responsive apps and APIs with strong UX, performance budgets, and clean component boundaries.</p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">React</span>
-          <span class="pill !normal-case">Next.js</span>
-          <span class="pill !normal-case">Vue</span>
-          <span class="pill !normal-case">Astro</span>
-          <span class="pill !normal-case">Node.js</span>
-        </div>
+    <div class="min-w-0 flex-1">
+      <div class="flex flex-wrap gap-2 border-b border-white/[0.06] pb-6">
+        {
+          filters.map((f, i) => (
+            <button
+              type="button"
+              onclick={`showTechCategory('${f.id}', this)`}
+              class:list={['tech-filter cursor-pointer text-xs font-semibold uppercase tracking-wide', i === 0 ? 'pill-active' : 'pill']}
+            >
+              {f.label}
+            </button>
+          ))
+        }
       </div>
 
-      <div class="tech-category mobile surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Mobile development</h3>
-        <p class="mt-2 text-sm text-zinc-400">Cross-platform delivery with native polish where it matters—offline, push, and store readiness.</p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">React Native</span>
-          <span class="pill !normal-case">Flutter</span>
-          <span class="pill !normal-case">iOS</span>
-          <span class="pill !normal-case">Android</span>
-          <span class="pill !normal-case">PWA</span>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="tech-category web surface p-7">
+          <h3 class="font-display text-base font-semibold text-white">Web &amp; APIs</h3>
+          <p class="mt-2 text-sm text-zinc-500">Component models, SSR/SSG hybrids, and API surfaces that stay coherent as teams grow.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="pill !normal-case">React</span>
+            <span class="pill !normal-case">Next.js</span>
+            <span class="pill !normal-case">Vue</span>
+            <span class="pill !normal-case">Astro</span>
+            <span class="pill !normal-case">Node.js</span>
+          </div>
         </div>
-      </div>
 
-      <div class="tech-category cloud devsecops surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Cloud services</h3>
-        <p class="mt-2 text-sm text-zinc-400">Multi-cloud patterns, Kubernetes where it earns its complexity, and pragmatic managed services.</p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">AWS</span>
-          <span class="pill !normal-case">Azure</span>
-          <span class="pill !normal-case">Google Cloud</span>
-          <span class="pill !normal-case">Docker</span>
-          <span class="pill !normal-case">Kubernetes</span>
+        <div class="tech-category mobile surface p-7">
+          <h3 class="font-display text-base font-semibold text-white">Mobile</h3>
+          <p class="mt-2 text-sm text-zinc-500">Ship once, tune per platform where native behavior matters.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="pill !normal-case">React Native</span>
+            <span class="pill !normal-case">Flutter</span>
+            <span class="pill !normal-case">iOS</span>
+            <span class="pill !normal-case">Android</span>
+            <span class="pill !normal-case">PWA</span>
+          </div>
         </div>
-      </div>
 
-      <div class="tech-category data ai surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Data platforms</h3>
-        <p class="mt-2 text-sm text-zinc-400">Operational stores, caching, and analytics-friendly schemas—with migrations and backups treated as first-class.</p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">PostgreSQL</span>
-          <span class="pill !normal-case">MySQL</span>
-          <span class="pill !normal-case">MongoDB</span>
-          <span class="pill !normal-case">Redis</span>
+        <div class="tech-category cloud devsecops surface p-7">
+          <h3 class="font-display text-base font-semibold text-white">Cloud &amp; runtime</h3>
+          <p class="mt-2 text-sm text-zinc-500">Kubernetes when it earns its keep; managed services when they do not.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="pill !normal-case">AWS</span>
+            <span class="pill !normal-case">Azure</span>
+            <span class="pill !normal-case">GCP</span>
+            <span class="pill !normal-case">Docker</span>
+            <span class="pill !normal-case">Kubernetes</span>
+          </div>
         </div>
-      </div>
 
-      <div class="tech-category ai surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">AI &amp; machine learning</h3>
-        <p class="mt-2 text-sm text-zinc-400">From retrieval-augmented assistants to batch scoring—governed data, evaluation, and cost-aware inference.</p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">Python</span>
-          <span class="pill !normal-case">NLP</span>
-          <span class="pill !normal-case">Vector search</span>
-          <span class="pill !normal-case">MLOps</span>
+        <div class="tech-category data ai surface p-7">
+          <h3 class="font-display text-base font-semibold text-white">Data stores</h3>
+          <p class="mt-2 text-sm text-zinc-500">Operational correctness first; analytics paths second.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="pill !normal-case">PostgreSQL</span>
+            <span class="pill !normal-case">MySQL</span>
+            <span class="pill !normal-case">MongoDB</span>
+            <span class="pill !normal-case">Redis</span>
+          </div>
         </div>
-      </div>
 
-      <div class="tech-category devsecops surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">DevSecOps</h3>
-        <p class="mt-2 text-sm text-zinc-400">Secure pipelines, policy as code, secrets management, and telemetry that helps teams respond calmly.</p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">CI/CD</span>
-          <span class="pill !normal-case">Terraform</span>
-          <span class="pill !normal-case">Ansible</span>
-          <span class="pill !normal-case">GitHub Actions</span>
+        <div class="tech-category ai surface p-7">
+          <h3 class="font-display text-base font-semibold text-white">ML in production</h3>
+          <p class="mt-2 text-sm text-zinc-500">Evaluation harnesses, retrieval patterns, and cost-aware inference.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="pill !normal-case">Python</span>
+            <span class="pill !normal-case">NLP</span>
+            <span class="pill !normal-case">Vector DB</span>
+            <span class="pill !normal-case">MLOps</span>
+          </div>
         </div>
-      </div>
 
-      <div class="tech-category microsoft surface p-8 md:col-span-2">
-        <h3 class="font-display text-lg font-semibold text-white">Microsoft ecosystem</h3>
-        <p class="mt-2 text-sm text-zinc-400">Enterprise integrations on .NET and Azure—identity, APIs, and operational excellence for Windows-heavy estates.</p>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">.NET</span>
-          <span class="pill !normal-case">C#</span>
-          <span class="pill !normal-case">Azure DevOps</span>
-          <span class="pill !normal-case">Entra ID</span>
+        <div class="tech-category devsecops surface p-7">
+          <h3 class="font-display text-base font-semibold text-white">SRE &amp; security</h3>
+          <p class="mt-2 text-sm text-zinc-500">Pipelines, policy-as-code, and telemetry that shortens incidents.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="pill !normal-case">GitHub Actions</span>
+            <span class="pill !normal-case">Terraform</span>
+            <span class="pill !normal-case">Ansible</span>
+            <span class="pill !normal-case">OpenTelemetry</span>
+          </div>
+        </div>
+
+        <div class="tech-category microsoft surface p-7 sm:col-span-2">
+          <h3 class="font-display text-base font-semibold text-white">Microsoft landscape</h3>
+          <p class="mt-2 text-sm text-zinc-500">.NET services, Entra-shaped identity, and Azure DevOps workflows for regulated environments.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="pill !normal-case">.NET</span>
+            <span class="pill !normal-case">C#</span>
+            <span class="pill !normal-case">Azure DevOps</span>
+            <span class="pill !normal-case">Entra ID</span>
+          </div>
         </div>
       </div>
     </div>

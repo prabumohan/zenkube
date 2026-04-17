@@ -1,0 +1,110 @@
+---
+/**
+ * Draw-on Z + K mark for ZenKube. Default: one-shot draw, then holds.
+ * Set loop=true only for internal logo previews (optional).
+ */
+interface Props {
+  size?: number;
+  loop?: boolean;
+}
+
+const { size = 40, loop = false } = Astro.props;
+const uid = `drawzk-${size}-${globalThis.crypto?.randomUUID?.().slice(0, 12) ?? 'x'}`;
+---
+
+<svg
+  class:list={['zk-drawzk', loop && 'zk-drawzk--loop']}
+  width={size}
+  height={size}
+  viewBox="0 0 64 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <defs>
+    <linearGradient id={`${uid}-bg`} x1="10" y1="54" x2="54" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34d399"></stop>
+      <stop offset="1" stop-color="#0d9488"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill={`url(#${uid}-bg)`}></rect>
+  <path
+    class="zk-drawzk__z"
+    pathLength="1"
+    d="M14 20H30L16 40H34"
+    stroke="#070a0f"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"></path>
+  <path
+    class="zk-drawzk__k"
+    pathLength="1"
+    d="M38 20V44M38 32L50 20M38 32L50 44"
+    stroke="#070a0f"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"></path>
+</svg>
+
+<style>
+  @keyframes zk-drawzk-z-once {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes zk-drawzk-k-once {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes zk-drawzk-letter-loop {
+    0% {
+      stroke-dashoffset: 1;
+      opacity: 0.55;
+    }
+    40% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    55% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 1;
+      opacity: 0.55;
+    }
+  }
+
+  .zk-drawzk__z,
+  .zk-drawzk__k {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .zk-drawzk:not(.zk-drawzk--loop) .zk-drawzk__z {
+    animation: zk-drawzk-z-once 0.75s ease forwards;
+  }
+  .zk-drawzk:not(.zk-drawzk--loop) .zk-drawzk__k {
+    animation: zk-drawzk-k-once 0.75s ease 0.45s forwards;
+  }
+
+  .zk-drawzk--loop .zk-drawzk__z {
+    animation: zk-drawzk-letter-loop 2.8s ease-in-out infinite;
+  }
+  .zk-drawzk--loop .zk-drawzk__k {
+    animation: zk-drawzk-letter-loop 2.8s ease-in-out infinite;
+    animation-delay: 0.45s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .zk-drawzk__z,
+    .zk-drawzk__k {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+</style>

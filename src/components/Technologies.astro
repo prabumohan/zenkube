@@ -1,21 +1,22 @@
 ---
 const filters = [
-  { id: 'all', label: 'All' },
-  { id: 'web', label: 'Frontend' },
-  { id: 'edge', label: 'Edge' },
-  { id: 'data', label: 'Data' },
-  { id: 'auth', label: 'Access' },
-  { id: 'dx', label: 'DX' },
+  { id: 'all', label: 'All technologies' },
+  { id: 'web', label: 'Web development' },
+  { id: 'mobile', label: 'Mobile' },
+  { id: 'cloud', label: 'Cloud' },
+  { id: 'data', label: 'Database' },
+  { id: 'ai', label: 'AI & ML' },
+  { id: 'devsecops', label: 'DevSecOps' },
+  { id: 'microsoft', label: 'Microsoft' },
 ];
 ---
 
 <section id="technologies" class="section-y">
   <div class="container-zen">
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Platform stack</h2>
+      <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Technologies we use</h2>
       <p class="mt-4 text-lg text-zinc-400">
-        ZenKube aligns with a boring-in-a-good-way stack: static Astro, Tailwind, and room to grow into
-        Cloudflare primitives.
+        We bring a modern toolkit to every engagement—so your solutions stay maintainable, observable, and ready to evolve.
       </p>
     </div>
 
@@ -34,43 +35,83 @@ const filters = [
     </div>
 
     <div class="mt-14 grid gap-5 md:grid-cols-2">
-      <div class="tech-category web edge surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Experience layer</h3>
-        <p class="mt-2 text-sm text-zinc-400">Astro islands, responsive layouts, and sharp typography out of the box.</p>
+      <div class="tech-category web surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Web development</h3>
+        <p class="mt-2 text-sm text-zinc-400">Responsive apps and APIs with strong UX, performance budgets, and clean component boundaries.</p>
         <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">React</span>
+          <span class="pill !normal-case">Next.js</span>
+          <span class="pill !normal-case">Vue</span>
           <span class="pill !normal-case">Astro</span>
-          <span class="pill !normal-case">Tailwind CSS</span>
-          <span class="pill !normal-case">TypeScript-ready</span>
+          <span class="pill !normal-case">Node.js</span>
         </div>
       </div>
 
-      <div class="tech-category edge dx surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Edge delivery</h3>
-        <p class="mt-2 text-sm text-zinc-400">Global static hosting with a path to Workers and Pages Functions.</p>
+      <div class="tech-category mobile surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Mobile development</h3>
+        <p class="mt-2 text-sm text-zinc-400">Cross-platform delivery with native polish where it matters—offline, push, and store readiness.</p>
         <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">Cloudflare Pages</span>
-          <span class="pill !normal-case">Workers</span>
-          <span class="pill !normal-case">Wrangler</span>
+          <span class="pill !normal-case">React Native</span>
+          <span class="pill !normal-case">Flutter</span>
+          <span class="pill !normal-case">iOS</span>
+          <span class="pill !normal-case">Android</span>
+          <span class="pill !normal-case">PWA</span>
         </div>
       </div>
 
-      <div class="tech-category data dx surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Data plane</h3>
-        <p class="mt-2 text-sm text-zinc-400">SQLite at the edge with D1—or bring your own Postgres when you scale.</p>
+      <div class="tech-category cloud devsecops surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Cloud services</h3>
+        <p class="mt-2 text-sm text-zinc-400">Multi-cloud patterns, Kubernetes where it earns its complexity, and pragmatic managed services.</p>
         <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">D1</span>
-          <span class="pill !normal-case">R2</span>
-          <span class="pill !normal-case">REST / tRPC</span>
+          <span class="pill !normal-case">AWS</span>
+          <span class="pill !normal-case">Azure</span>
+          <span class="pill !normal-case">Google Cloud</span>
+          <span class="pill !normal-case">Docker</span>
+          <span class="pill !normal-case">Kubernetes</span>
         </div>
       </div>
 
-      <div class="tech-category auth edge surface p-8">
-        <h3 class="font-display text-lg font-semibold text-white">Access control</h3>
-        <p class="mt-2 text-sm text-zinc-400">Start with Cloudflare Access; graduate to custom auth when policies tighten.</p>
+      <div class="tech-category data ai surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Data platforms</h3>
+        <p class="mt-2 text-sm text-zinc-400">Operational stores, caching, and analytics-friendly schemas—with migrations and backups treated as first-class.</p>
         <div class="mt-5 flex flex-wrap gap-2">
-          <span class="pill !normal-case">Cloudflare Access</span>
-          <span class="pill !normal-case">JWT sessions</span>
-          <span class="pill !normal-case">SSO-ready</span>
+          <span class="pill !normal-case">PostgreSQL</span>
+          <span class="pill !normal-case">MySQL</span>
+          <span class="pill !normal-case">MongoDB</span>
+          <span class="pill !normal-case">Redis</span>
+        </div>
+      </div>
+
+      <div class="tech-category ai surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">AI &amp; machine learning</h3>
+        <p class="mt-2 text-sm text-zinc-400">From retrieval-augmented assistants to batch scoring—governed data, evaluation, and cost-aware inference.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">Python</span>
+          <span class="pill !normal-case">NLP</span>
+          <span class="pill !normal-case">Vector search</span>
+          <span class="pill !normal-case">MLOps</span>
+        </div>
+      </div>
+
+      <div class="tech-category devsecops surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">DevSecOps</h3>
+        <p class="mt-2 text-sm text-zinc-400">Secure pipelines, policy as code, secrets management, and telemetry that helps teams respond calmly.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">CI/CD</span>
+          <span class="pill !normal-case">Terraform</span>
+          <span class="pill !normal-case">Ansible</span>
+          <span class="pill !normal-case">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="tech-category microsoft surface p-8 md:col-span-2">
+        <h3 class="font-display text-lg font-semibold text-white">Microsoft ecosystem</h3>
+        <p class="mt-2 text-sm text-zinc-400">Enterprise integrations on .NET and Azure—identity, APIs, and operational excellence for Windows-heavy estates.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">.NET</span>
+          <span class="pill !normal-case">C#</span>
+          <span class="pill !normal-case">Azure DevOps</span>
+          <span class="pill !normal-case">Entra ID</span>
         </div>
       </div>
     </div>

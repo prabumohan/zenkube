@@ -1,4 +1,14 @@
 ---
+const stack = [
+  'Docker',
+  'Kubernetes',
+  'Ansible',
+  'Nginx',
+  'AWS',
+  'Jenkins',
+  'Terraform',
+  'Git',
+];
 ---
 
 <section id="home" class="section-y">
@@ -7,27 +17,40 @@
       <p
         class="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-200/90 opacity-0 [animation-delay:0ms]"
       >
-        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_12px_#34d399]"></span>
-        Built for Cloudflare Pages
+        <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_12px_#34d399]"></span>
+        Initializing systems
       </p>
       <h1
         class="animate-fade-up font-display text-4xl font-bold leading-[1.08] tracking-tight text-white opacity-0 sm:text-5xl lg:text-6xl [animation-delay:80ms]"
       >
-        Inventory your team
-        <span class="mt-2 block gradient-text">actually shares.</span>
+        Innovative IT solutions
+        <span class="mt-2 block gradient-text">consulting &amp; engineering</span>
       </h1>
       <p
         class="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 opacity-0 [animation-delay:140ms] sm:text-xl"
       >
-        ZenKube is a lightweight operations surface for partners and small crews—clear stock levels,
-        simple workflows, and a UI that stays fast on mobile and desktop.
+        ZenKube helps organizations plan, build, and run modern infrastructure and customer-facing products—from
+        cloud platforms and automation to secure, high-quality web experiences.
       </p>
       <div
         class="animate-fade-up mt-10 flex flex-col items-center justify-center gap-3 opacity-0 sm:flex-row sm:gap-4 [animation-delay:200ms]"
       >
-        <a href="#contact" class="btn-primary min-w-[200px]">Request a demo</a>
-        <a href="#services" class="btn-ghost min-w-[200px]">Explore capabilities</a>
+        <a href="#contact" class="btn-primary min-w-[200px]">Get started</a>
+        <a href="#services" class="btn-ghost min-w-[200px]">Explore services</a>
       </div>
+    </div>
+
+    <div
+      class="animate-fade-up mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-2 opacity-0 [animation-delay:220ms]"
+      aria-label="Technologies we work with"
+    >
+      {
+        stack.map((name) => (
+          <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-zinc-400">
+            {name}
+          </span>
+        ))
+      }
     </div>
 
     <div class="mx-auto mt-20 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -37,35 +60,35 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-base font-semibold text-white">Realtime-ready</h3>
-        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Static-first shell; plug in APIs when you need live sync.</p>
+        <h3 class="font-display text-base font-semibold text-white">Fast delivery</h3>
+        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Short feedback loops, clear milestones, and pragmatic scope.</p>
       </div>
       <div class="surface animate-fade-up p-6 text-center opacity-0 [animation-delay:320ms]">
         <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-500/15 ring-1 ring-violet-400/30">
           <svg class="h-7 w-7 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-base font-semibold text-white">Partner-friendly</h3>
-        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Roles and shared views designed for small trusted groups.</p>
+        <h3 class="font-display text-base font-semibold text-white">Reliable solutions</h3>
+        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Production-minded design: observability, backups, and sane defaults.</p>
       </div>
       <div class="surface animate-fade-up p-6 text-center opacity-0 [animation-delay:380ms]">
         <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-500/15 ring-1 ring-sky-400/30">
           <svg class="h-7 w-7 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-base font-semibold text-white">Audit-minded</h3>
-        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Structured lists and notes so changes stay explainable.</p>
+        <h3 class="font-display text-base font-semibold text-white">Expert support</h3>
+        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Hands-on guidance across architecture, security, and platform operations.</p>
       </div>
       <div class="surface animate-fade-up p-6 text-center opacity-0 [animation-delay:440ms]">
         <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500/15 ring-1 ring-teal-400/30">
           <svg class="h-7 w-7 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
           </svg>
         </div>
-        <h3 class="font-display text-base font-semibold text-white">Edge-deployed</h3>
-        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Ship the marketing and app shell globally from the edge.</p>
+        <h3 class="font-display text-base font-semibold text-white">Scalable design</h3>
+        <p class="mt-2 text-sm leading-relaxed text-zinc-500">Systems that can grow with traffic, teams, and compliance needs.</p>
       </div>
     </div>
   </div>

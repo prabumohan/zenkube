@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-sans">
+    <div class="pointer-events-none fixed inset-0 -z-20 bg-zen-950" aria-hidden="true"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-mesh" aria-hidden="true"></div>
+    <div
+      class="pointer-events-none fixed inset-0 -z-10 bg-grid-slate bg-grid opacity-[0.45]"
+      aria-hidden="true"
+    ></div>
+    <slot />
+
+    <script is:inline>
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        if (!menu || !icon) return;
+        const open = menu.classList.toggle('hidden') === false;
+        icon.innerHTML = open
+          ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />'
+          : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+      }
+
+      function showTechCategory(category, el) {
+        document.querySelectorAll('.tech-filter').forEach((btn) => {
+          btn.classList.remove('pill-active');
+          btn.classList.add('pill');
+        });
+        if (el) {
+          el.classList.add('pill-active');
+          el.classList.remove('pill');
+        }
+        document.querySelectorAll('.tech-category').forEach((card) => {
+          if (category === 'all' || card.classList.contains(category)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      document.querySelectorAll('#mobile-menu a').forEach((link) => {
+        link.addEventListener('click', () => {
+          const menu = document.getElementById('mobile-menu');
+          const icon = document.getElementById('menu-icon');
+          if (menu) menu.classList.add('hidden');
+          if (icon)
+            icon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+        });
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (!href || href === '#') return;
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    </script>
+  </body>
+</html>

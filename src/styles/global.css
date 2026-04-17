@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply relative min-h-screen bg-zen-950 text-zinc-200 antialiased;
+  }
+
+  ::selection {
+    @apply bg-emerald-500/30 text-white;
+  }
+}
+
+@layer components {
+  .container-zen {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl;
+    @apply shadow-card transition duration-300 ease-out;
+  }
+
+  .surface:hover {
+    @apply border-emerald-400/25 shadow-glow-sm;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-emerald-300 via-teal-200 to-violet-300 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-zen-950;
+    @apply bg-gradient-to-r from-emerald-400 to-teal-400 shadow-glow-sm transition;
+    @apply hover:brightness-110 hover:shadow-glow-md active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-zinc-100;
+    @apply bg-white/[0.04] backdrop-blur-sm transition hover:border-emerald-400/40 hover:bg-white/[0.07];
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-zinc-400 transition hover:text-emerald-300;
+  }
+
+  .pill {
+    @apply rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-zinc-300;
+  }
+
+  .pill-active {
+    @apply border-emerald-400/40 bg-emerald-500/15 text-emerald-200 ring-2 ring-emerald-400/20;
+  }
+
+  .section-y {
+    @apply py-20 sm:py-28;
+  }
+}

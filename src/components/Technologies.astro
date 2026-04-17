@@ -1,0 +1,78 @@
+---
+const filters = [
+  { id: 'all', label: 'All' },
+  { id: 'web', label: 'Frontend' },
+  { id: 'edge', label: 'Edge' },
+  { id: 'data', label: 'Data' },
+  { id: 'auth', label: 'Access' },
+  { id: 'dx', label: 'DX' },
+];
+---
+
+<section id="technologies" class="section-y">
+  <div class="container-zen">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Platform stack</h2>
+      <p class="mt-4 text-lg text-zinc-400">
+        ZenKube aligns with a boring-in-a-good-way stack: static Astro, Tailwind, and room to grow into
+        Cloudflare primitives.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap justify-center gap-2">
+      {
+        filters.map((f, i) => (
+          <button
+            type="button"
+            onclick={`showTechCategory('${f.id}', this)`}
+            class:list={['tech-filter cursor-pointer text-xs font-semibold uppercase tracking-wide', i === 0 ? 'pill-active' : 'pill']}
+          >
+            {f.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-2">
+      <div class="tech-category web edge surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Experience layer</h3>
+        <p class="mt-2 text-sm text-zinc-400">Astro islands, responsive layouts, and sharp typography out of the box.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">Astro</span>
+          <span class="pill !normal-case">Tailwind CSS</span>
+          <span class="pill !normal-case">TypeScript-ready</span>
+        </div>
+      </div>
+
+      <div class="tech-category edge dx surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Edge delivery</h3>
+        <p class="mt-2 text-sm text-zinc-400">Global static hosting with a path to Workers and Pages Functions.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">Cloudflare Pages</span>
+          <span class="pill !normal-case">Workers</span>
+          <span class="pill !normal-case">Wrangler</span>
+        </div>
+      </div>
+
+      <div class="tech-category data dx surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Data plane</h3>
+        <p class="mt-2 text-sm text-zinc-400">SQLite at the edge with D1—or bring your own Postgres when you scale.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">D1</span>
+          <span class="pill !normal-case">R2</span>
+          <span class="pill !normal-case">REST / tRPC</span>
+        </div>
+      </div>
+
+      <div class="tech-category auth edge surface p-8">
+        <h3 class="font-display text-lg font-semibold text-white">Access control</h3>
+        <p class="mt-2 text-sm text-zinc-400">Start with Cloudflare Access; graduate to custom auth when policies tighten.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="pill !normal-case">Cloudflare Access</span>
+          <span class="pill !normal-case">JWT sessions</span>
+          <span class="pill !normal-case">SSO-ready</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

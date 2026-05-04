@@ -1,5 +1,7 @@
 ---
-const mail = 'contact@zenkube.dev';
+import { officeLines } from '../data/office';
+
+const mail = 'contact@zenkube.in';
 ---
 
 <section id="contact" class="section-y">
@@ -18,6 +20,25 @@ const mail = 'contact@zenkube.dev';
           Email {mail}
         </a>
         <p class="mt-4 text-xs text-zinc-600">We aim to respond within two business days.</p>
+        <div class="mt-8 border-t border-white/[0.06] pt-8">
+          <p class="eyebrow text-zinc-500">Office</p>
+          <address
+            class="not-italic mt-4 rounded-xl border border-white/[0.08] bg-white/[0.03] p-5 ring-1 ring-white/[0.04]"
+          >
+            {
+              officeLines.map((line, i) => (
+                <span
+                  class:list={[
+                    'block leading-snug',
+                    i === 0 ? 'font-medium text-zinc-100' : 'mt-1.5 text-[0.9375rem] text-zinc-400',
+                  ]}
+                >
+                  {line}
+                </span>
+              ))
+            }
+          </address>
+        </div>
       </div>
 
       <div class="lg:col-span-7">

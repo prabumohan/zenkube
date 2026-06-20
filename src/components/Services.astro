@@ -1,73 +1,120 @@
 ---
-const items = [
+const groups = [
   {
-    title: 'Architecture & advisory',
-    body: 'Cut risk before you commit: target architectures, dependency maps, and phased migrations that respect your runway.',
-    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-    span: 'lg:col-span-7',
+    title: 'IT Services',
+    intro:
+      'Stable networks, secure systems, and software that fits how you work. We design, run, and improve your IT stack so outages, security gaps, and manual workarounds stop eating your week.',
+    items: [
+      {
+        title: 'Network Management',
+        body: 'Design, monitor, and maintain LAN and WAN connectivity—routing, switching, Wi‑Fi, and vendor coordination—so your sites stay online and predictable.',
+        icon: 'M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0',
+      },
+      {
+        title: 'Cyber Security',
+        body: 'Risk reviews, hardening, firewall policy, patch discipline, and continuous monitoring—practical controls sized to your team, not a shelf of unused tools.',
+        icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+      },
+      {
+        title: 'Cloud Computing',
+        body: 'Migration planning, landing zones, cost controls, and day‑two operations on AWS, Azure, or hybrid setups—documented so your staff can take the wheel.',
+        icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',
+      },
+      {
+        title: 'Help Desk Support',
+        body: 'First‑line support for incidents, access requests, and software questions—clear SLAs, sensible escalation, and tickets your team can actually audit.',
+        icon: 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z',
+      },
+      {
+        title: 'IT Consultation',
+        body: 'Short assessments and roadmaps: what to fix now, what to defer, and what it will cost—written for executives and engineers alike.',
+        icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+      },
+      {
+        title: 'Software Development',
+        body: 'Custom applications, integrations, and internal tools—scoped in phases, reviewed in your repo, and handed over with runbooks your team can maintain.',
+        icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+      },
+    ],
   },
   {
-    title: 'Product engineering',
-    body: 'Interfaces, APIs, and performance budgets—shipping to edge networks and real devices, not localhost fairy tales.',
-    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
-    span: 'lg:col-span-5',
-  },
-  {
-    title: 'Security hardening',
-    body: 'Baseline controls, pipeline secrets, and incident playbooks that fit teams without a 24/7 SOC.',
-    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
-    span: 'lg:col-span-4',
-  },
-  {
-    title: 'Platforms & cloud',
-    body: 'Landing zones, identity, networking, and cost guardrails—documented so handover is not a cliff.',
-    icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01',
-    span: 'lg:col-span-4',
-  },
-  {
-    title: 'Delivery automation',
-    body: 'CI/CD, IaC, and release trains that make production boring—the good kind of boring.',
-    icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-    span: 'lg:col-span-4',
-  },
-  {
-    title: 'Data & applied ML',
-    body: 'Pipelines, warehouse patterns, and pragmatic ML features with evaluation and rollback in mind.',
-    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-    span: 'lg:col-span-12',
+    title: 'Call Centre Services',
+    intro:
+      'Customers expect fast, consistent answers. We run contact centre operations—trained agents, defined processes, and measurable quality—so you scale support without losing control of tone or data.',
+    items: [
+      {
+        title: 'Inbound Customer Service',
+        body: 'Handle enquiries, order status, complaints, and account questions on your scripts and systems—logged, tagged, and resolved within agreed response times.',
+        icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
+      },
+      {
+        title: 'Outbound Call Services',
+        body: 'Appointment reminders, renewals, surveys, and follow‑ups—scheduled campaigns with call lists, outcomes tracked, and opt‑out rules respected.',
+        icon: 'M16 3h5m0 0v5m0-5l-6 6M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.516l2.257-1.13a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z',
+      },
+      {
+        title: 'Multi-Channel Support',
+        body: 'Phone, email, chat, and messaging under one queue and reporting view—same knowledge base, same escalation path, whichever channel the customer picks.',
+        icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+      },
+      {
+        title: 'Telemarketing Services',
+        body: 'Lead qualification and outreach campaigns run to your compliance checklist—scripts approved upfront, recordings available, results reported weekly.',
+        icon: 'M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z',
+      },
+      {
+        title: 'Quality Assurance',
+        body: 'Call sampling, scorecards, coaching, and calibration sessions—so agents improve against criteria you define, not generic checklists.',
+        icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+      },
+      {
+        title: 'Analytics and Reporting',
+        body: 'Volume, handle time, first‑contact resolution, and satisfaction trends in dashboards you can share with ops and leadership—no black‑box metrics.',
+        icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+      },
+    ],
   },
 ];
 ---
 
 <section id="services" class="section-y border-y border-white/[0.06] bg-gradient-to-b from-white/[0.02] to-transparent">
   <div class="container-zen">
-    <div class="max-w-2xl">
-      <p class="eyebrow text-emerald-200/60">Capability</p>
-      <h2 class="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Where we plug in</h2>
+    <div class="max-w-3xl">
+      <p class="eyebrow text-emerald-200/60">Services</p>
+      <h2 class="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">What we deliver</h2>
       <p class="mt-4 text-lg leading-relaxed text-zinc-400">
-        Pick one lane to start or combine a few—each block below is a slice of work we have led end-to-end for product and
-        platform teams.
+        Two practice areas—technology you can run and support your customers can trust. Each item below is work we staff,
+        measure, and improve with you.
       </p>
     </div>
 
-    <div class="mt-14 grid gap-4 lg:grid-cols-12">
-      {
-        items.map((item) => (
-          <article class:list={['surface group relative overflow-hidden p-7 lg:p-8', item.span]}>
-            <div
-              class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-violet-500/15 to-transparent opacity-0 blur-2xl transition group-hover:opacity-100"
-              aria-hidden="true"
-            />
-            <div class="mb-5 inline-flex rounded-xl bg-white/[0.06] p-3 ring-1 ring-white/10">
-              <svg class="h-7 w-7 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={item.icon} />
-              </svg>
-            </div>
-            <h3 class="font-display text-lg font-semibold text-white">{item.title}</h3>
-            <p class="mt-2 max-w-prose text-sm leading-relaxed text-zinc-400">{item.body}</p>
-          </article>
-        ))
-      }
-    </div>
+    {
+      groups.map((group, groupIndex) => (
+        <div class:list={['mt-14', groupIndex > 0 && 'mt-20 border-t border-white/[0.06] pt-20']}>
+          <div class="max-w-3xl">
+            <h3 class="font-display text-2xl font-semibold text-white sm:text-[1.65rem]">{group.title}</h3>
+            <p class="mt-4 text-base leading-relaxed text-zinc-400">{group.intro}</p>
+          </div>
+
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {group.items.map((item) => (
+              <article class="surface group relative overflow-hidden p-7 lg:p-8">
+                <div
+                  class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-violet-500/15 to-transparent opacity-0 blur-2xl transition group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <div class="mb-5 inline-flex rounded-xl bg-white/[0.06] p-3 ring-1 ring-white/10">
+                  <svg class="h-7 w-7 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d={item.icon} />
+                  </svg>
+                </div>
+                <h4 class="font-display text-lg font-semibold text-white">{item.title}</h4>
+                <p class="mt-2 text-sm leading-relaxed text-zinc-400">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>
